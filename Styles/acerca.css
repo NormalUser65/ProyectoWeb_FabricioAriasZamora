@@ -75,6 +75,15 @@
     background-color: #e9f7e4;
     padding: 60px 0;
   }
+
+  .map-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
   
   @media (max-width: 768px) {
     .section-title {
