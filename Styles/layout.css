@@ -1,0 +1,51 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fefefc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR */
+.navbar-nav .nav-link {
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffe066 !important;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+/* Enlaces de las redes sociales en el footer */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffe066;
+}
+
+footer a:hover i {
+    transform: scale(1.2);
+    color: #ffe066;
+}
+
+footer .d-flex a {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+footer .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #ccc;
+}

@@ -1,0 +1,92 @@
+#carouselRestaurante {
+    height: auto; 
+    overflow: hidden;
+  }
+  
+
+  #carouselRestaurante .carousel-item img {
+    height: 900px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto; 
+  }
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.carousel-caption h2,
+.carousel-caption p {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-row {
+    display: flex;
+    align-items: center;
+    padding: 3rem 2rem;
+    flex-wrap: wrap;
+    margin-block: 2rem;
+  }
+  
+  .info-image {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .info-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .info-text {
+    flex: 1;
+    padding: 1rem 2rem;
+  }
+  
+  .info-text h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .info-text p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+  }
+  
+  /* Colores personalizados */
+  .bg-lightgreen {
+    background-color: #e8f5e9;
+  }
+  
+  .bg-lightyellow {
+    background-color: #fffde7;
+  }
+  
+  .bg-lightorange {
+    background-color: #fff3e0;
+  }
+  
+
+.info-image img {
+    max-width: 100%;
+    height: auto; 
+    object-fit: cover; 
+    max-height: 450px; 
+  }
+  
+
+
+
