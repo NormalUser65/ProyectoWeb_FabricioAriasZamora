@@ -1,0 +1,58 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Vaso de Tajadas de Mango",
+        "precio": "₡1500",
+        "imagen": "../Images/Prod00.png"
+      },
+      {
+        "id": 2,
+        "nombre": "Bandeja Mixta",
+        "precio": "₡3000",
+        "imagen": "../Images/Prod01.png"
+      },
+      {
+        "id": 3,
+        "nombre": "Milky Mango",
+        "precio": "₡2500",
+        "imagen": "../Images/Prod02.png"
+      },
+      {
+        "id": 4,
+        "nombre": "Cheesecake (Porción)",
+        "precio": "₡2200",
+        "imagen": "../Images/Prod03.png"
+      },
+      {
+        "id": 5,
+        "nombre": "Cheesecake (Entero)",
+        "precio": "₡7000",
+        "imagen": "../Images/Prod04.png"
+      },
+      {
+        "id": 6,
+        "nombre": "Helado de Mango Verde",
+        "precio": "₡2300",
+        "imagen": "../Images/Prod05.png"
+      },
+      {
+        "id": 7,
+        "nombre": "Helado de Maracumango",
+        "precio": "₡2400",
+        "imagen": "../Images/Prod06.png"
+      },
+      {
+        "id": 8,
+        "nombre": "Helado de Chamomango",
+        "precio": "₡2500",
+        "imagen": "../Images/Prod07.png"
+      },
+      {
+        "id": 9,
+        "nombre": "Ceviche Mixto",
+        "precio": "₡3200",
+        "imagen": "../Images/Prod08.png"
+      }
+    ]
+  }
