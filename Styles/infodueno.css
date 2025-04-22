@@ -1,0 +1,63 @@
+.owner-profile {
+    padding: 2rem 0;
+  }
+  
+  .section-title {
+    color: #2e7d32;
+    font-weight: 700;
+    border-bottom: 2px solid #81c784;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  .owner-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-item h4 {
+    color: #388e3c;
+    font-size: 1.2rem;
+  }
+  
+  .info-item p, .info-item ul {
+    color: #555;
+    line-height: 1.8;
+  }
+  
+  .info-item ul {
+    padding-left: 1.2rem;
+  }
+  
+  .info-item ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-info a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .owner-photo {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .owner-info {
+      text-align: center;
+    }
+    
+    .info-item {
+      text-align: left;
+    }
+  }
