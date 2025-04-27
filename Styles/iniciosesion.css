@@ -1,0 +1,75 @@
+/* Auth Container */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../Images/CarouselMang00.png') no-repeat center center;
+    background-size: cover;
+    padding: 20px 0;
+  }
+  
+  /* Auth Card */
+  .auth-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  /* Auth Image */
+  .auth-image {
+    background-color: #f8f9fa;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .auth-image .logo-img {
+    max-width: 70%;
+    height: auto;
+  }
+  
+  /* Auth Form */
+  .auth-form {
+    padding: 2rem;
+  }
+  
+  .auth-form h2 {
+    color: #198754;
+    font-weight: 700;
+  }
+  
+  /* Form Switch Links */
+  .form-switch {
+    color: #198754;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .form-switch:hover {
+    text-decoration: underline;
+  }
+  
+  /* Toggle Password Button */
+  .toggle-password {
+    border-color: #ced4da;
+  }
+  
+  .toggle-password:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767.98px) {
+    .auth-form {
+      padding: 1.5rem;
+    }
+    
+    .auth-card {
+      border-radius: 10px;
+    }
+  }
