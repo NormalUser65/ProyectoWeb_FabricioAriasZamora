@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const API_URL = 'json/productos.json';
+    const API_URL = 'Json/productos.json';
     const productosContainer = document.getElementById('productos-container');
     
     // Mostrar spinner de carga
