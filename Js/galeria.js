@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const API_URL = 'https://raw.githubusercontent.com/NormalUser65/ProyectoWeb_FabricioAriasZamora/main/Json/productos.json';
+    const API_URL = 'json/productos.json';
     const productosContainer = document.getElementById('productos-container');
     
     // Mostrar spinner de carga
