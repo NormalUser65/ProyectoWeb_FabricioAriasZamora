@@ -4,7 +4,7 @@
           "id": 1,
           "nombre": "Vaso de Tajadas de Mango",
           "precio": 1500,
-          "imagen": "../Images/Prod00.png",
+          "imagen": "https://normaluser65.github.io/ProyectoWeb_FabricioAriasZamora/Images/Prod00.png",
           "descripcion": "Frescas tajadas de mango maduro con un toque de sal y limón"
       },
       {
