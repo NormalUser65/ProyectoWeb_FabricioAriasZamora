@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h5 class="card-title text-success">${producto.nombre}</h5>
                         <p class="card-text text-muted">${producto.descripcion}</p>
                         <div class="mt-auto">
-                            <p class="card-text fw-bold fs-5 mb-3">${producto.precio.toLocaleString('es-CR')}</p>
+                            <p class="card-text fw-bold fs-5 mb-3">₡${producto.precio.toLocaleString('es-CR')}</p>
                             <button class="btn btn-success w-100 agregar-carrito" data-id="${producto.id}">
                                 <i class="bi bi-cart-plus"></i> Añadir al carrito
                             </button>
