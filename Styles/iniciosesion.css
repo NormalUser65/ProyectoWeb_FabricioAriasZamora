@@ -73,3 +73,22 @@
       border-radius: 10px;
     }
   }
+  /* Logo para móviles */
+.mobile-logo {
+  max-width: 120px !important;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Asegura visibilidad en móviles */
+.d-md-none {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .d-md-none {
+    display: none !important;
+  }
+}
