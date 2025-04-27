@@ -1,58 +1,67 @@
 {
-    "productos": [
+  "productos": [
       {
-        "id": 1,
-        "nombre": "Vaso de Tajadas de Mango",
-        "precio": "₡1500",
-        "imagen": "../Images/Prod00.png"
+          "id": 1,
+          "nombre": "Vaso de Tajadas de Mango",
+          "precio": 1500,
+          "imagen": "../Images/Prod00.png",
+          "descripcion": "Frescas tajadas de mango maduro con un toque de sal y limón"
       },
       {
-        "id": 2,
-        "nombre": "Bandeja Mixta",
-        "precio": "₡3000",
-        "imagen": "../Images/Prod01.png"
+          "id": 2,
+          "nombre": "Bandeja Mixta",
+          "precio": 3000,
+          "imagen": "../Images/Prod01.png",
+          "descripcion": "Combinación de mango, sandía, piña y melón con topping especial"
       },
       {
-        "id": 3,
-        "nombre": "Milky Mango",
-        "precio": "₡2500",
-        "imagen": "../Images/Prod02.png"
+          "id": 3,
+          "nombre": "Milky Mango",
+          "precio": 2500,
+          "imagen": "../Images/Prod02.png",
+          "descripcion": "Batido cremoso de mango natural con leche"
       },
       {
-        "id": 4,
-        "nombre": "Cheesecake (Porción)",
-        "precio": "₡2200",
-        "imagen": "../Images/Prod03.png"
+          "id": 4,
+          "nombre": "Cheesecake (Porción)",
+          "precio": 2200,
+          "imagen": "../Images/Prod03.png",
+          "descripcion": "Deliciosa porción de cheesecake con salsa de mango"
       },
       {
-        "id": 5,
-        "nombre": "Cheesecake (Entero)",
-        "precio": "₡7000",
-        "imagen": "../Images/Prod04.png"
+          "id": 5,
+          "nombre": "Cheesecake (Entero)",
+          "precio": 7000,
+          "imagen": "../Images/Prod04.png",
+          "descripcion": "Tarta completa de cheesecake con base de galleta y coulis de mango"
       },
       {
-        "id": 6,
-        "nombre": "Helado de Mango Verde",
-        "precio": "₡2300",
-        "imagen": "../Images/Prod05.png"
+          "id": 6,
+          "nombre": "Helado de Mango Verde",
+          "precio": 2300,
+          "imagen": "../Images/Prod05.png",
+          "descripcion": "Helado artesanal de mango verde con chile en polvo"
       },
       {
-        "id": 7,
-        "nombre": "Helado de Maracumango",
-        "precio": "₡2400",
-        "imagen": "../Images/Prod06.png"
+          "id": 7,
+          "nombre": "Helado de Maracumango",
+          "precio": 2400,
+          "imagen": "../Images/Prod06.png",
+          "descripcion": "Mezcla refrescante de maracuyá y mango"
       },
       {
-        "id": 8,
-        "nombre": "Helado de Chamomango",
-        "precio": "₡2500",
-        "imagen": "../Images/Prod07.png"
+          "id": 8,
+          "nombre": "Helado de Chamomango",
+          "precio": 2500,
+          "imagen": "../Images/Prod07.png",
+          "descripcion": "Exótica combinación de chamoy y mango"
       },
       {
-        "id": 9,
-        "nombre": "Ceviche Mixto",
-        "precio": "₡3200",
-        "imagen": "../Images/Prod08.png"
+          "id": 9,
+          "nombre": "Ceviche Mixto",
+          "precio": 3200,
+          "imagen": "../Images/Prod08.png",
+          "descripcion": "Ceviche fresco con mango, mariscos y nuestro aderezo especial"
       }
-    ]
-  }
+  ]
+}
