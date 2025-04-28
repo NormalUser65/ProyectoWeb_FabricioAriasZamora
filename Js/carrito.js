@@ -128,20 +128,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Finalizar compra
-    document.getElementById('carritoOffcanvas').addEventListener('click', function(e) {
-        if (e.target.id === 'finalizar-compra' || e.target.closest('#finalizar-compra')) {
-            const carrito = JSON.parse(localStorage.getItem('carrito'));
-            if (carrito.length > 0) {
-                const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
-                alert(`¡Compra finalizada por ₡${total.toLocaleString('es-CR')}! Gracias por tu compra.`);
-                localStorage.setItem('carrito', JSON.stringify([]));
-                actualizarCarrito();
-            } else {
-                alert('Tu carrito está vacío');
-            }
+    // Finalizar compra - Redirigir a nueva pestaña con formulario
+document.getElementById('carritoOffcanvas').addEventListener('click', function(e) {
+    if (e.target.id === 'finalizar-compra' || e.target.closest('#finalizar-compra')) {
+        const carrito = JSON.parse(localStorage.getItem('carrito'));
+        
+        if (carrito.length > 0) {
+            // Guardar carrito temporalmente para la próxima página
+            localStorage.setItem('carritoCheckout', JSON.stringify(carrito));
+            
+            // Abrir nueva pestaña con el formulario de compra
+            window.open('ordenes.html', '_blank'); // Cambia "checkout.html" por tu ruta
+        } else {
+            alert('Tu carrito está vacío');
         }
-    });
+    }
+});
 
     // Mostrar notificación
     function mostrarNotificacion(mensaje) {

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra | Mangosas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SDK EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init('x9v1X4yhNQnAg4_uv'); // Inicializa con tu Public Key
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="mb-0">Finalizar Compra</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="formulario-pedido">
+                            <h5 class="mb-3">Resumen del Pedido</h5>
+                            <div id="resumen-carrito" class="mb-4"></div>
+                            
+                            <h5 class="mb-3">Información Personal</h5>
+                            <div class="mb-3">
+                                <label class="form-label">Nombre completo</label>
+                                <input type="text" name="nombre" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Teléfono</label>
+                                <input type="tel" name="telefono" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Dirección de envío</label>
+                                <textarea name="direccion" class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Notas adicionales</label>
+                                <textarea name="notas" class="form-control" rows="2"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Confirmar Pedido</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Importar el archivo JS externo -->
+    <script src="../Js/ordenes.js"></script>
+</body>
+</html>
