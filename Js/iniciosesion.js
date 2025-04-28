@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', function() {
       const input = this.parentElement.querySelector('input');
       const icon = this.querySelector('i');
-      
+
       if (input.type === 'password') {
         input.type = 'text';
         icon.classList.remove('bi-eye');
@@ -42,46 +42,46 @@ document.addEventListener('DOMContentLoaded', function() {
   // Manejar el registro de nuevos usuarios
   registerForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    const name = document.getElementById('registerName').value.trim();
-    const email = document.getElementById('registerEmail').value.trim();
-    const password = document.getElementById('registerPassword').value;
-    const confirmPassword = document.getElementById('registerConfirmPassword').value;
-    
+
+    const name = $('#registerName').val().trim(); // Usando jQuery
+    const email = $('#registerEmail').val().trim(); // Usando jQuery
+    const password = $('#registerPassword').val(); // Usando jQuery
+    const confirmPassword = $('#registerConfirmPassword').val(); // Usando jQuery
+
     // Validaciones
     if (password !== confirmPassword) {
       alert('Las contraseñas no coinciden');
       return;
     }
-    
+
     if (password.length < 6) {
       alert('La contraseña debe tener al menos 6 caracteres');
       return;
     }
-    
+
     // Verificar si el usuario ya existe
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const userExists = users.some(user => user.email === email);
-    
+
     if (userExists) {
       alert('Este correo electrónico ya está registrado');
       return;
     }
-    
+
     // Registrar nuevo usuario
     const newUser = {
       name,
       email,
       password // En una aplicación real, esto debería estar hasheado
     };
-    
+
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
-    
+
     alert('Registro exitoso! Ahora puedes iniciar sesión');
     registerSection.style.display = 'none';
     loginSection.style.display = 'block';
-    
+
     // Limpiar el formulario
     registerForm.reset();
   });
@@ -89,14 +89,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Manejar el inicio de sesión
   loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    const email = document.getElementById('loginEmail').value.trim();
-    const password = document.getElementById('loginPassword').value;
-    
+
+    const email = $('#loginEmail').val().trim(); // Usando jQuery
+    const password = $('#loginPassword').val(); // Usando jQuery
+
     // Verificar credenciales
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find(user => user.email === email && user.password === password);
-    
+
     if (user) {
       // Crear sesión temporal (no persistente)
       sessionStorage.setItem('currentUser', JSON.stringify({
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         name: user.name,
         timestamp: new Date().getTime()
       }));
-      
+
       // Redirigir al home
       window.location.href = 'home.html';
     } else {
