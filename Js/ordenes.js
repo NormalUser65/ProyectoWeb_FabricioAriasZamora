@@ -1,11 +1,34 @@
-// Configuración EmailJS
 emailjs.init('x9v1X4yhNQnAg4_uv');
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtener carrito de localStorage
     const carrito = JSON.parse(localStorage.getItem('carritoCheckout')) || [];
     const resumenCarrito = document.getElementById('resumen-carrito');
     const formulario = document.getElementById('formulario-pedido');
+    const fechaNacimientoInput = document.querySelector('input[name="fecha_nacimiento"]');
+
+    // Validar edad (mínimo 18 años)
+    fechaNacimientoInput.addEventListener('change', function() {
+        const fechaNacimiento = new Date(this.value);
+        const hoy = new Date();
+        const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+        const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+        
+        if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+            edad--;
+        }
+        
+        if (edad < 18) {
+            this.classList.add('is-invalid');
+            Swal.fire({
+                title: 'Edad no válida',
+                text: 'Debes ser mayor de 18 años para realizar compras.',
+                icon: 'error',
+                confirmButtonText: 'Entendido'
+            });
+        } else {
+            this.classList.remove('is-invalid');
+        }
+    });
 
     // Mostrar resumen del carrito
     if (carrito.length === 0) {
@@ -50,16 +73,43 @@ document.addEventListener('DOMContentLoaded', function() {
     formulario.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        // Validar edad nuevamente
+        const fechaNacimiento = new Date(this.fecha_nacimiento.value);
+        const hoy = new Date();
+        let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+        const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+        
+        if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+            edad--;
+        }
+        
+        if (edad < 18) {
+            Swal.fire({
+                title: 'Edad no válida',
+                text: 'Debes ser mayor de 18 años para realizar compras.',
+                icon: 'error',
+                confirmButtonText: 'Entendido'
+            });
+            return;
+        }
+
         // Mostrar loader
         const submitBtn = this.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Procesando...';
+
+        // Formatear número de tarjeta para mostrar solo los últimos 4 dígitos
+        const numeroTarjeta = this.numero_tarjeta.value;
+        const tarjetaOculta = '**** **** **** ' + numeroTarjeta.slice(-4);
 
         const datosCorreo = {
             nombre: this.nombre.value,
             telefono: this.telefono.value,
             direccion: this.direccion.value,
             notas: this.notas.value,
+            tipo_tarjeta: this.tipo_tarjeta.value,
+            tarjeta: tarjetaOculta,
+            expiracion: this.expiracion_tarjeta.value,
             productos: carrito.map(item => 
                 `<div style="margin-bottom: 15px;">
                    <strong>${item.nombre}</strong><br>
@@ -80,41 +130,59 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Enviar correo
-emailjs.send("service_9rbrn2c", "template_la5dfju", datosCorreo)
-    .then(() => {
-        // Éxito: Limpiar carrito y redirigir
-        localStorage.removeItem('carritoCheckout');
-        localStorage.setItem('carrito', JSON.stringify([]));
-        
-        // Redirigir a home.html después de 2 segundos (opcional)
-        setTimeout(() => {
-            window.location.href = 'home.html';
-        }, 2000);
-        
-        // Mostrar mensaje de confirmación antes de redirigir
-        Swal.fire({
-            title: '¡Pedido Confirmado!',
-            text: `Tu pedido por ₡${datosCorreo.total} ha sido procesado.`,
-            icon: 'success',
-            confirmButtonText: 'Aceptar',
-            confirmButtonColor: '#28a745',
-            timer: 2000,  // Cierra automáticamente después de 2 segundos
-            timerProgressBar: true,
-            willClose: () => {
-                window.location.href = 'home.html';
-            }
-        });
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        Swal.fire({
-            title: 'Error',
-            text: 'No pudimos procesar tu pedido. Por favor intenta nuevamente.',
-            icon: 'error',
-            confirmButtonText: 'Entendido'
-        });
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Confirmar Pedido';
+        emailjs.send("service_9rbrn2c", "template_la5dfju", datosCorreo)
+            .then(() => {
+                localStorage.removeItem('carritoCheckout');
+                localStorage.setItem('carrito', JSON.stringify([]));
+                
+                Swal.fire({
+                    title: '¡Pedido Confirmado!',
+                    html: `
+                        <p>Tu pedido por ₡${datosCorreo.total} ha sido procesado.</p>
+                        <p class="small text-muted">Método de pago: ${datosCorreo.tipo_tarjeta.toUpperCase()} ${datosCorreo.tarjeta}</p>
+                    `,
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar',
+                    confirmButtonColor: '#28a745',
+                    willClose: () => {
+                        window.location.href = 'home.html';
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire({
+                    title: 'Error',
+                    text: 'No pudimos procesar tu pedido. Por favor intenta nuevamente.',
+                    icon: 'error',
+                    confirmButtonText: 'Entendido'
+                });
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Confirmar Pedido';
+            });
     });
+
+    // Formatear número de tarjeta
+    document.querySelector('input[name="numero_tarjeta"]').addEventListener('input', function(e) {
+        let value = this.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+        let formatted = '';
+        
+        for (let i = 0; i < value.length; i++) {
+            if (i > 0 && i % 4 === 0) formatted += ' ';
+            formatted += value[i];
+        }
+        
+        this.value = formatted.trim();
+    });
+
+    // Formatear fecha de expiración
+    document.querySelector('input[name="expiracion_tarjeta"]').addEventListener('input', function(e) {
+        let value = this.value.replace(/[^0-9]/g, '');
+        
+        if (value.length > 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2, 4);
+        }
+        
+        this.value = value;
     });
 });

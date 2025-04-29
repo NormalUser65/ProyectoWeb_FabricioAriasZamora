@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fefefc;
@@ -6,28 +7,29 @@ body {
     padding: 0;
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar-nav .nav-link {
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Suaviza la transición de los cambios */
 }
 
+/* Efectos hover y estado activo para los enlaces */
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: #ffe066 !important;
     font-weight: bold;
 }
 
-/* FOOTER */
-
-/* Enlaces de las redes sociales en el footer */
+/* Footer */
+/* Estilos base para enlaces del footer */
 footer a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
+/* Efecto hover para enlaces */
 footer a:hover {
-    color: #ffe066;
+    color: #ffe066;            
 }
 
 footer a:hover i {
@@ -40,6 +42,7 @@ footer .d-flex a {
     margin-right: 15px;
 }
 
+/* Sección inferior del footer */
 footer .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin-top: 30px;

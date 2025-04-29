@@ -1,0 +1,38 @@
+/* Estilos para el formulario de pago */
+.card-number-input {
+    letter-spacing: 2px;
+}
+
+/* Estilo para tarjetas */
+.card-icon {
+    width: 40px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Validación de edad */
+.invalid-age {
+    border-color: #dc3545 !important;
+}
+
+.age-warning {
+    color: #dc3545;
+    font-size: 0.875em;
+    display: none;
+}
+
+/* Estilos para campos de tarjeta */
+#card-element {
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    background: white;
+}
+
+/* Media Queries (Mobile First) */
+@media (max-width: 576px) {
+    .card-body {
+        padding: 1rem;
+    }
+}

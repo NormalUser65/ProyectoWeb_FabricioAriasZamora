@@ -1,3 +1,4 @@
+/* Variables globales */
 :root {
   --primary-color: #198754;
   --secondary-color: #f8f9fa;
@@ -7,7 +8,8 @@
   --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Base Styles - Mobile First */
+/* Estructura principal */
+/* Contenedor de autenticación (Mobile First) */
 .auth-container {
   min-height: 100vh;
   display: flex;
@@ -18,6 +20,7 @@
   padding: 1rem;
 }
 
+/* Autenticación */
 .auth-card {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
@@ -28,12 +31,15 @@
   max-width: 500px;
 }
 
+/* Formulario de autenticación */
 .auth-form {
   padding: 1.5rem;
+  animation: fadeIn 0.5s ease-out;
 }
 
-/* Logo Styles */
-.mobile-logo {
+/* Características del logo*/
+/* Logo para móviles */
+.mobile-logo, .auth-image .logo-img {
   max-width: 120px;
   height: auto;
   display: block;
@@ -41,18 +47,20 @@
   transition: transform 0.3s ease;
 }
 
+/* Logo para desktop */
 .auth-image .logo-img {
   max-width: 70%;
   height: auto;
   transition: transform 0.3s ease;
 }
 
+/* Efectos hover para logos */
 .mobile-logo:hover,
 .auth-image .logo-img:hover {
   transform: scale(1.05);
 }
 
-/* Typography */
+
 .auth-form h2 {
   color: var(--primary-color);
   font-weight: 700;
@@ -60,19 +68,15 @@
   text-align: center;
 }
 
-.auth-form p.text-muted {
-  color: var(--text-muted);
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* Form Elements */
+/* Elementos de formulario */
+/* Etiquetas del formulario */
 .form-label {
   font-weight: 500;
   color: var(--text-color);
   margin-bottom: 0.5rem;
 }
 
+/* Campos de entrada */
 .form-control {
   border-radius: 8px;
   padding: 0.75rem 1rem;
@@ -80,12 +84,13 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Estado focus de los campos */
 .form-control:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+  border-color: var(--primary-color); /* Cambia color del borde */
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25); /* Sombra de enfoque */
 }
 
-/* Buttons */
+/* Botones */
 .btn-success {
   background-color: var(--primary-color);
   border: none;
@@ -99,7 +104,8 @@
   transform: translateY(-2px);
 }
 
-/* Toggle Password Button */
+/* Elementos varios */
+/* Botón para mostrar/ocultar contraseña */
 .toggle-password {
   border-color: var(--border-color);
   transition: all 0.3s ease;
@@ -111,7 +117,7 @@
   color: var(--primary-color);
 }
 
-/* Form Switch Links */
+/* Cambio entre login/register */
 .form-switch {
   color: var(--primary-color);
   font-weight: 500;
@@ -125,7 +131,8 @@
   color: #157347;
 }
 
-/* Responsive Adjustments - Desktop */
+
+/* Media queries */
 @media (min-width: 768px) {
   .auth-container {
     padding: 2rem;
@@ -139,11 +146,8 @@
   .auth-form {
     padding: 2rem;
   }
-  
-  .d-md-none {
-    display: none !important;
-  }
-  
+
+  /* Contenedor de imagen en desktop */
   .auth-image {
     min-height: 100%;
     display: flex;
@@ -153,7 +157,7 @@
   }
 }
 
-/* Animation Enhancements */
+/* Efectos de animación */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
